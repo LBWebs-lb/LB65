@@ -1,0 +1,85 @@
+﻿@model IEnumerable<LB.Models.MailLB>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.dnommail)*@
+                @Html.DisplayName("Nom usuari")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mailuser)     @Html.DisplayName("Nom usuari")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.passmail)   
+                @Html.DisplayName("Nom usuari")
+            <th>
+                @Html.DisplayNameFor(model => model.lnkmail)
+                @Html.DisplayName("Nom usuari")
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.cusualt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.faltrto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cusumod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fmod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hmod)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dnommail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mailuser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lnkmail)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.cusualt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.faltrto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cusumod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fmod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hmod)
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idlbmail">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idlbmail">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idlbmail">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

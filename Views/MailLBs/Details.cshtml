@@ -1,0 +1,72 @@
+﻿@model LB.Models.MailLB
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MailLB</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dnommail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dnommail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mailuser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mailuser)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.passmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.passmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lnkmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lnkmail)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusualt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusualt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.faltrto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.faltrto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusumod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusumod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hmod)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idlbmail">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
