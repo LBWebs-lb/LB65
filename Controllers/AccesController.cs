@@ -13,7 +13,7 @@ namespace LB.Controllers
     public class AccesController : Controller
     {
         private readonly ApplicationDbContext _context;
-
+        // pene
         public AccesController(ApplicationDbContext context)
         {
             _context = context;
