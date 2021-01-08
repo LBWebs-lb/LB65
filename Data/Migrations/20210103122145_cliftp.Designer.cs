@@ -4,14 +4,16 @@ using LB.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LB.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210103122145_cliftp")]
+    partial class cliftp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,45 +96,6 @@ namespace LB.Data.Migrations
                     b.ToTable("clihos");
                 });
 
-            modelBuilder.Entity("LB.Models.Clients.ClientsAcces", b =>
-                {
-                    b.Property<int>("icliacc")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("acc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusualt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusumod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("fmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("hmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("linkWp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("passWd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("userWp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("icliacc");
-
-                    b.ToTable("cliacc");
-                });
-
             modelBuilder.Entity("LB.Models.Clients.ClientsFtp", b =>
                 {
                     b.Property<int>("iftp")
@@ -167,113 +130,6 @@ namespace LB.Data.Migrations
                     b.HasKey("iftp");
 
                     b.ToTable("cliftp");
-                });
-
-            modelBuilder.Entity("LB.Models.Clients.ClientsLB", b =>
-                {
-                    b.Property<int>("icli")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("cusualt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusumod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("dnom")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("dnommail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("dobs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("est")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("fmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("hmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("icliacc")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("iftp")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ihos")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ipredis")
-                        .HasColumnType("int");
-
-                    b.Property<string>("tcli")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("icli");
-
-                    b.HasIndex("icliacc");
-
-                    b.HasIndex("iftp");
-
-                    b.HasIndex("ihos");
-
-                    b.HasIndex("ipredis");
-
-                    b.ToTable("clilb");
-                });
-
-            modelBuilder.Entity("LB.Models.Clients.ClientsPreDisseny", b =>
-                {
-                    b.Property<int>("ipredis")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("bouby")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusualt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusumod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("envcli")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("fmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("hmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("paid")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("pctheme")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ptheme")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("themebuy")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ipredis");
-
-                    b.ToTable("clipredis");
                 });
 
             modelBuilder.Entity("LB.Models.MailLB", b =>
@@ -513,33 +369,6 @@ namespace LB.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("LB.Models.Clients.ClientsLB", b =>
-                {
-                    b.HasOne("LB.Models.Clients.ClientsAcces", "Acces")
-                        .WithMany()
-                        .HasForeignKey("icliacc");
-
-                    b.HasOne("LB.Models.Clients.ClientsFtp", "Ftp")
-                        .WithMany()
-                        .HasForeignKey("iftp");
-
-                    b.HasOne("LB.Models.Clients.ClientHosting", "Host")
-                        .WithMany()
-                        .HasForeignKey("ihos");
-
-                    b.HasOne("LB.Models.Clients.ClientsPreDisseny", "PreDis")
-                        .WithMany()
-                        .HasForeignKey("ipredis");
-
-                    b.Navigation("Acces");
-
-                    b.Navigation("Ftp");
-
-                    b.Navigation("Host");
-
-                    b.Navigation("PreDis");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

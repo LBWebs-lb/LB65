@@ -1,4 +1,4 @@
-﻿@model LB.Models.MailLB
+﻿@model LB.Models.Clients.ClientsLB
 
 @{
     ViewData["Title"] = "Create";
@@ -6,31 +6,56 @@
 
 <h1>Create</h1>
 
-<h4>MailLB</h4>
+<h4>ClientsLB</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="ihos" class="control-label"></label>
+                <select asp-for="ihos" class ="form-control" asp-items="ViewBag.ihos"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="iftp" class="control-label"></label>
+                <select asp-for="iftp" class ="form-control" asp-items="ViewBag.iftp"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ipredis" class="control-label"></label>
+                <select asp-for="ipredis" class ="form-control" asp-items="ViewBag.ipredis"></select>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="dnom" class="control-label"></label>
+                <input asp-for="dnom" class="form-control" />
+                <span asp-validation-for="dnom" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="dnommail" class="control-label"></label>
                 <input asp-for="dnommail" class="form-control" />
                 <span asp-validation-for="dnommail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="mailuser" class="control-label"></label>
-                <input asp-for="mailuser" class="form-control" />
-                <span asp-validation-for="mailuser" class="text-danger"></span>
+                <label asp-for="est" class="control-label"></label>
+                <select asp-for="est" class="form-control">
+                    <option value=""></option>
+                    <option value="Pressupostat">Pressupostat</option>
+                    <option value="Predisseny">Predisseny</option>
+                    <option value="Desenvolupament">Desenvolupament</option>
+                    <option value="Mostrada">Mostrada</option>
+                    <option value="Entregada">Entregada</option>
+                    <option value="RespostaClient">RespostaClient</option>
+                </select>
+                <span asp-validation-for="est" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="passmail" class="control-label"></label>
-                <input asp-for="passmail" class="form-control" />
-                <span asp-validation-for="passmail" class="text-danger"></span>
+                <label asp-for="dobs" class="control-label"></label>
+                <input asp-for="dobs" class="form-control" />
+                <span asp-validation-for="dobs" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="lnkmail" class="control-label"></label>
-                <input asp-for="lnkmail" class="form-control" />
-                <span asp-validation-for="lnkmail" class="text-danger"></span>
+                <label asp-for="tcli" class="control-label"></label>
+                <input asp-for="tcli" class="form-control" />
+                <span asp-validation-for="tcli" class="text-danger"></span>
             </div>
             @*<div class="form-group">
                 <label asp-for="cusualt" class="control-label"></label>
@@ -58,7 +83,7 @@
                 <span asp-validation-for="hmod" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <input type="submit" value="Nou" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

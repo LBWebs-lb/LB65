@@ -4,14 +4,16 @@ using LB.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LB.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210108084454_clients")]
+    partial class clients
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,45 +96,6 @@ namespace LB.Data.Migrations
                     b.ToTable("clihos");
                 });
 
-            modelBuilder.Entity("LB.Models.Clients.ClientsAcces", b =>
-                {
-                    b.Property<int>("icliacc")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("acc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusualt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cusumod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("fmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("hmod")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("linkWp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("passWd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("userWp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("icliacc");
-
-                    b.ToTable("cliacc");
-                });
-
             modelBuilder.Entity("LB.Models.Clients.ClientsFtp", b =>
                 {
                     b.Property<int>("iftp")
@@ -203,9 +166,6 @@ namespace LB.Data.Migrations
                     b.Property<string>("hmod")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("icliacc")
-                        .HasColumnType("int");
-
                     b.Property<int?>("iftp")
                         .HasColumnType("int");
 
@@ -219,8 +179,6 @@ namespace LB.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("icli");
-
-                    b.HasIndex("icliacc");
 
                     b.HasIndex("iftp");
 
@@ -517,10 +475,6 @@ namespace LB.Data.Migrations
 
             modelBuilder.Entity("LB.Models.Clients.ClientsLB", b =>
                 {
-                    b.HasOne("LB.Models.Clients.ClientsAcces", "Acces")
-                        .WithMany()
-                        .HasForeignKey("icliacc");
-
                     b.HasOne("LB.Models.Clients.ClientsFtp", "Ftp")
                         .WithMany()
                         .HasForeignKey("iftp");
@@ -532,8 +486,6 @@ namespace LB.Data.Migrations
                     b.HasOne("LB.Models.Clients.ClientsPreDisseny", "PreDis")
                         .WithMany()
                         .HasForeignKey("ipredis");
-
-                    b.Navigation("Acces");
 
                     b.Navigation("Ftp");
 

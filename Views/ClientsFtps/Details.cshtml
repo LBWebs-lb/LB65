@@ -1,0 +1,66 @@
+﻿@model LB.Models.Clients.ClientsFtp
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ClientsFtp</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userftp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userftp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.passftp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.passftp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ipserver)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ipserver)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusualt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusualt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.faltrto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.faltrto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusumod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusumod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hmod)
+        </dd>*@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.iftp">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

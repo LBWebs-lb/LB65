@@ -1,36 +1,32 @@
-﻿@model LB.Models.MailLB
+﻿@model LB.Models.Clients.ClientsFtp
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
-<h4>MailLB</h4>
+<h4>ClientsFtp</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="iftp" />
             <div class="form-group">
-                <label asp-for="dnommail" class="control-label"></label>
-                <input asp-for="dnommail" class="form-control" />
-                <span asp-validation-for="dnommail" class="text-danger"></span>
+                <label asp-for="userftp" class="control-label"></label>
+                <input asp-for="userftp" class="form-control" />
+                <span asp-validation-for="userftp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="mailuser" class="control-label"></label>
-                <input asp-for="mailuser" class="form-control" />
-                <span asp-validation-for="mailuser" class="text-danger"></span>
+                <label asp-for="passftp" class="control-label"></label>
+                <input asp-for="passftp" class="form-control" />
+                <span asp-validation-for="passftp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="passmail" class="control-label"></label>
-                <input asp-for="passmail" class="form-control" />
-                <span asp-validation-for="passmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="lnkmail" class="control-label"></label>
-                <input asp-for="lnkmail" class="form-control" />
-                <span asp-validation-for="lnkmail" class="text-danger"></span>
+                <label asp-for="ipserver" class="control-label"></label>
+                <input asp-for="ipserver" class="form-control" />
+                <span asp-validation-for="ipserver" class="text-danger"></span>
             </div>
             @*<div class="form-group">
                 <label asp-for="cusualt" class="control-label"></label>
@@ -58,7 +54,7 @@
                 <span asp-validation-for="hmod" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <input type="submit" value="Nou" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

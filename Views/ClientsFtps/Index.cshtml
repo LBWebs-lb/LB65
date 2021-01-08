@@ -1,33 +1,29 @@
-﻿@model IEnumerable<LB.Models.Acces>
+﻿@model IEnumerable<LB.Models.Clients.ClientsFtp>
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    ViewData["Title"] = "Acces";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Acces</h1>
+<h1>Index</h1>
 @if (SignInManager.IsSignedIn(User))
 {
     <p>
-        <a asp-action="Create">Nou</a>
+        <a asp-action="Create">Create New</a>
     </p>
-
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayName("Usuari")
+                    @Html.DisplayNameFor(model => model.userftp)
                 </th>
                 <th>
-                    @Html.DisplayName("Contrasenya")
+                    @Html.DisplayNameFor(model => model.passftp)
                 </th>
                 <th>
-                    @Html.DisplayName("Link")
-                </th>
-                <th>
-                    @Html.DisplayName("Acces")
+                    @Html.DisplayNameFor(model => model.ipserver)
                 </th>
                 @*<th>
                         @Html.DisplayNameFor(model => model.cusualt)
@@ -52,21 +48,13 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.userWp)
+                        @Html.DisplayFor(modelItem => item.userftp)
                     </td>
                     <td>
-
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            @Html.DisplayFor(modelItem => item.passWd)
-                        }
-
+                        @Html.DisplayFor(modelItem => item.passftp)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.linkWp)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.acc)
+                        @Html.DisplayFor(modelItem => item.ipserver)
                     </td>
                     @*<td>
                             @Html.DisplayFor(modelItem => item.cusualt)
@@ -84,9 +72,9 @@
                             @Html.DisplayFor(modelItem => item.hmod)
                         </td>*@
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.idlb">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@item.idlb">Detalls</a> |
-                        <a asp-action="Delete" asp-route-id="@item.idlb">Eliminar</a>
+                        <a asp-action="Edit" asp-route-id="@item.iftp">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.iftp">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.iftp">Delete</a>
                     </td>
                 </tr>
             }

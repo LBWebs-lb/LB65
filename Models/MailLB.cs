@@ -10,9 +10,13 @@ namespace LB.Models
     {
         [Key]
         public int idlbmail { get; set; }
+        [Display(Name = "Nom")]
         public string dnommail { get; set; }
+        [Display(Name = "Correu")]
         public string mailuser { get; set; }
+        [Display(Name = "Password")]
         public string passmail { get; set; }
+        [Display(Name = "Link")]
         public string lnkmail { get; set; }
         public string cusualt { get; set; }
         public DateTime faltrto { get; set; }

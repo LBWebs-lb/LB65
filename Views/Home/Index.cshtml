@@ -10,17 +10,20 @@
 {
 <div class="text-center">
     <h1 class="display-4">Sessió iniciada</h1>
-        <div class="row">
-            <div class="col-6">
-                <a asp-controller="Acces" asp-action="Index"><button class="btn btn-primary btnhome">Acces</button></a>
-            </div>
-            <div class="col-6">
-                <a asp-controller="MailLBs" asp-action="Index"><button class="btn btn-primary btnhome">Mail</button></a>
-            </div>
-            <div class="col-6">
-                <a asp-controller="Acces" asp-action="Index"><button class="btn btn-primary btnhome">Facturació</button></a>
-            </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-controller="Acces" asp-action="Index"><button class="btn btn-primary btnhome">Acces</button></a>
         </div>
+        <div class="col-6">
+            <a asp-controller="MailLBs" asp-action="Index"><button class="btn btn-primary btnhome">Mail</button></a>
+        </div>
+        <div class="col-6">
+            <a asp-controller="ClientsLBs" asp-action="Index"><button class="btn btn-primary btnhome">Clients</button></a>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Acces" asp-action="Index"><button class="btn btn-primary btnhome">Facturació</button></a>
+        </div>
+    </div>
     </div>
 }
 else

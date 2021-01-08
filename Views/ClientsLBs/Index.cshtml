@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LB.Models.Clients.ClientsLB>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Host)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ftp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PreDis)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.dnom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dnommail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.est)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dobs)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tcli)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Host.ihos)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ftp.iftp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PreDis.ipredis)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dnom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dnommail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.est)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dobs)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tcli)
+                    </td>
+                    <td>
+                        <a asp-action="Acces" asp-route-id="@item.icliacc">Acces</a> |
+                        <a asp-action="Hosting" asp-route-id="@item.ihos">Hosting</a> |
+                        <a asp-action="Edit" asp-route-id="@item.icli">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.icli">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.icli">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

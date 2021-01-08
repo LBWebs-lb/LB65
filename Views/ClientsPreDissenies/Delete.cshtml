@@ -1,0 +1,87 @@
+﻿@model LB.Models.Clients.ClientsPreDisseny
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ClientsPreDisseny</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ptheme)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ptheme)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.envcli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.envcli)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.themebuy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.themebuy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pctheme)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pctheme)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bouby)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bouby)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.paid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.paid)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusualt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusualt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.faltrto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.faltrto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cusumod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cusumod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fmod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hmod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hmod)
+        </dd>*@
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ipredis" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -9,6 +9,8 @@ using System.Threading;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using LB.Models.Clients;
+
 namespace LB.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -20,11 +22,21 @@ namespace LB.Data
 
         public DbSet<Acces> Acces { get; set; }
         public DbSet<MailLB> Mail { get; set; }
+        public DbSet<ClientHosting> CliHosting { get; set; }
+        public DbSet<ClientsFtp> ClientsFtp { get; set; }
+        public DbSet<ClientsPreDisseny> ClientsPredis { get; set; }
+        public DbSet<ClientsLB> ClientsLB { get; set; }
+        public DbSet<ClientsAcces> ClientsAcces { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Acces>().ToTable("lbacc");
             modelBuilder.Entity<MailLB>().ToTable("lbmail");
+            modelBuilder.Entity<ClientHosting>().ToTable("clihos");
+            modelBuilder.Entity<ClientsFtp>().ToTable("cliftp");
+            modelBuilder.Entity<ClientsPreDisseny>().ToTable("clipredis");
+            modelBuilder.Entity<ClientsLB>().ToTable("clilb");
+            modelBuilder.Entity<ClientsAcces>().ToTable("cliacc");
             base.OnModelCreating(modelBuilder);
         }
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))

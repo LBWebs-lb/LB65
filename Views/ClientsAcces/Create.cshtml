@@ -1,4 +1,4 @@
-﻿@model LB.Models.MailLB
+﻿@model LB.Models.Clients.ClientsAcces
 
 @{
     ViewData["Title"] = "Create";
@@ -6,31 +6,31 @@
 
 <h1>Create</h1>
 
-<h4>MailLB</h4>
+<h4>ClientsAcces</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="dnommail" class="control-label"></label>
-                <input asp-for="dnommail" class="form-control" />
-                <span asp-validation-for="dnommail" class="text-danger"></span>
+                <label asp-for="userWp" class="control-label"></label>
+                <input asp-for="userWp" class="form-control" />
+                <span asp-validation-for="userWp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="mailuser" class="control-label"></label>
-                <input asp-for="mailuser" class="form-control" />
-                <span asp-validation-for="mailuser" class="text-danger"></span>
+                <label asp-for="passWd" class="control-label"></label>
+                <input asp-for="passWd" class="form-control" />
+                <span asp-validation-for="passWd" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="passmail" class="control-label"></label>
-                <input asp-for="passmail" class="form-control" />
-                <span asp-validation-for="passmail" class="text-danger"></span>
+                <label asp-for="linkWp" class="control-label"></label>
+                <input asp-for="linkWp" class="form-control" />
+                <span asp-validation-for="linkWp" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="lnkmail" class="control-label"></label>
-                <input asp-for="lnkmail" class="form-control" />
-                <span asp-validation-for="lnkmail" class="text-danger"></span>
+                <label asp-for="acc" class="control-label"></label>
+                <input asp-for="acc" class="form-control" />
+                <span asp-validation-for="acc" class="text-danger"></span>
             </div>
             @*<div class="form-group">
                 <label asp-for="cusualt" class="control-label"></label>
@@ -58,15 +58,15 @@
                 <span asp-validation-for="hmod" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <input type="submit" value="Nou" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<div>
+    <a asp-action="Index">Tornar a la llista</a>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
