@@ -61,7 +61,7 @@ namespace LB.Controllers
             {
                 _context.Add(clientsPreDisseny);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Edit", new RouteValueDictionary(new { controller = "ClientsLBS", action = "Edit", Id = clientsPreDisseny.ipredis, Table = "Clihos" }));
+                return RedirectToAction("Edit", new RouteValueDictionary(new { controller = "ClientsLBS", action = "Edit", Id = clientsPreDisseny.ipredis, Table = "clipredis" }));
             }
             return View(clientsPreDisseny);
         }

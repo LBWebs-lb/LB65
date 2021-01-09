@@ -111,6 +111,12 @@ namespace LB.Controllers
                             clientLB.iftp = id;
                         }
                         break;
+                    case "clipredis":
+                        if (clientLB.ipredis == null)
+                        {
+                            clientLB.ipredis = id;
+                        }
+                        break;
                 }
                
                 await _context.SaveChangesAsync();
