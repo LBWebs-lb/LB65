@@ -40,7 +40,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="est" class="control-label"></label>
-                <select asp-for="est" class="form-control"></select>
+                <select asp-for="est" class="form-control">
+                    <option value=""></option>
+                    <option value="Pressupostat">Pressupostat</option>
+                    <option value="Predisseny">Predisseny</option>
+                    <option value="Desenvolupament">Desenvolupament</option>
+                    <option value="Mostrada">Mostrada</option>
+                    <option value="Entregada">Entregada</option>
+                    <option value="RespostaClient">RespostaClient</option>
+                </select>
                 <span asp-validation-for="est" class="text-danger"></span>
             </div>
             <div class="form-group">
