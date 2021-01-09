@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LB.Data;
 using LB.Models.Clients;
+using Microsoft.AspNetCore.Routing;
 
 namespace LB.Controllers
 {
@@ -60,7 +61,7 @@ namespace LB.Controllers
             {
                 _context.Add(clientsFtp);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Edit", new RouteValueDictionary(new { controller = "ClientsLBS", action = "Edit", Id = clientsFtp.iftp, Table = "Cliftp" }));
             }
             return View(clientsFtp);
         }

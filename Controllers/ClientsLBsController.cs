@@ -90,10 +90,29 @@ namespace LB.Controllers
             if (table != null)
             {
                 var clientLB = await _context.ClientsLB.FindAsync(HttpContext.Session.GetInt32("idclient"));
-                if (clientLB.icliacc == null)
+
+                switch (table)
                 {
-                    clientLB.icliacc = id;
+                    case "Cliacces":
+                       if (clientLB.icliacc == null)
+                            {
+                                clientLB.icliacc = id;
+                            }
+                        break;
+                    case "Clihos":
+                        if (clientLB.ihos == null)
+                        {
+                            clientLB.ihos = id;
+                        }
+                        break;
+                    case "Cliftp":
+                        if (clientLB.iftp == null)
+                        {
+                            clientLB.iftp = id;
+                        }
+                        break;
                 }
+               
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -198,18 +217,46 @@ namespace LB.Controllers
         }
 
 
-        public IActionResult Hosting(int? id)
+        public async Task<IActionResult> Hosting(int id)
         {
-            if (id == null)
+            var clientsLB = await _context.ClientsLB.FindAsync(id);
+            HttpContext.Session.SetInt32("idclient", id);
+            if (clientsLB.ihos == null)
             {
-                return RedirectToAction(actionName: "Create", controllerName: "ClientHosting");
+                return RedirectToAction("Create", new RouteValueDictionary(new { controller = "ClientHosting", action = "Create", Id = id }));
             }
             else
             {
-                return View(string.Format("Views/CliHos/Details.cshtml/{0}", id));
+                return RedirectToAction("Details", new RouteValueDictionary(new { controller = "ClientHosting", action = "Details", Id = clientsLB.ihos }));
+            }
+        }
+        public async Task<IActionResult> FTP(int id)
+        {
+            var clientsLB = await _context.ClientsLB.FindAsync(id);
+            HttpContext.Session.SetInt32("idclient", id);
+            if (clientsLB.iftp == null)
+            {
+                return RedirectToAction("Create", new RouteValueDictionary(new { controller = "ClientsFtps", action = "Create", Id = id }));
+            }
+            else
+            {
+                return RedirectToAction("Details", new RouteValueDictionary(new { controller = "ClientsFtps", action = "Details", Id = clientsLB.iftp }));
+            }
+        }
+        public async Task<IActionResult> Disseny(int id)
+        {
+            var clientsLB = await _context.ClientsLB.FindAsync(id);
+            HttpContext.Session.SetInt32("idclient", id);
+            if (clientsLB.ipredis == null)
+            {
+                return RedirectToAction("Create", new RouteValueDictionary(new { controller = "ClientsPreDissenies", action = "Create", Id = id }));
+            }
+            else
+            {
+                return RedirectToAction("Details", new RouteValueDictionary(new { controller = "ClientsPreDissenies", action = "Details", Id = clientsLB.ipredis }));
             }
         }
 
-
     }
+    
 }

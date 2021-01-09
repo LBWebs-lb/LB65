@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<LB.Models.Clients.ClientsLB>
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+
 
 @{
     ViewData["Title"] = "Index";
@@ -74,8 +72,10 @@
                         @Html.DisplayFor(modelItem => item.tcli)
                     </td>
                     <td>
-                        <a asp-action="Acces" asp-route-id="@item.icliacc">Acces</a> |
-                        <a asp-action="Hosting" asp-route-id="@item.ihos">Hosting</a> |
+                        <a asp-action="Acces" asp-route-id="@item.icli">Acces</a> |
+                        <a asp-action="Disseny" asp-route-id="@item.icli">Predisseny</a> |
+                        <a asp-action="Hosting" asp-route-id="@item.icli">Hosting</a> |
+                        <a asp-action="FTP" asp-route-id="@item.icli">FTP</a> |
                         <a asp-action="Edit" asp-route-id="@item.icli">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.icli">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.icli">Delete</a>
