@@ -3,72 +3,47 @@
 @{
     ViewData["Title"] = "Details";
 }
+@if (SignInManager.IsSignedIn(User))
+{
+    <h1>Details</h1>
 
-<h1>Details</h1>
 
-<div>
-    <h4>ClientsAcces</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.userWp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.userWp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.passWd)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.passWd)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.linkWp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.linkWp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.acc)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.acc)
-        </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cusualt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cusualt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.faltrto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.faltrto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cusumod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cusumod)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fmod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fmod)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hmod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hmod)
-        </dd>*@
-    </dl>
-</div>
-<div>
-    @*<a asp-action="Edit" asp-route-id="@Model.icliacc">Edit</a> |
-    <a asp-action="Index">Back to List</a>*@
-    <a asp-action="IndexClients">Tornar</a>
+    <div>
+        <h4>ClientsAcces</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.userWp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.userWp)
+            </dd>
 
-</div>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.passWd)
+
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.passWd)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.linkWp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.linkWp)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.acc)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.acc)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        @*<a asp-action="Edit" asp-route-id="@Model.icliacc">Edit</a> |
+            <a asp-action="Index">Back to List</a>*@
+        <a asp-action="IndexClients">Tornar</a>
+
+    </div>
+
+}

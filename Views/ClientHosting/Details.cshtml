@@ -3,65 +3,38 @@
 @{
     ViewData["Title"] = "Details";
 }
+@if (SignInManager.IsSignedIn(User))
+{
+    <h1>Details</h1>
 
-<h1>Details</h1>
+    <div>
+        <h4>CliHos</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.userhos)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.userhos)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.passhos)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.passhos)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.linkwphos)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.linkwphos)
+            </dd>
+        </dl>
 
-<div>
-    <h4>CliHos</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.userhos)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.userhos)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.passhos)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.passhos)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.linkwphos)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.linkwphos)
-        </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cusualt)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cusualt)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.faltrto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.faltrto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cusumod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cusumod)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fmod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fmod)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hmod)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hmod)
-        </dd>*@
-    </dl>
-</div>
-<div>
-    @*<a asp-action="Edit" asp-route-id="@Model.ihos">Edit</a> |
-    <a asp-action="Index">Back to List</a>*@
-    <a asp-action="IndexClients">Tornar</a>
-</div>
+    </div>
+    <div>
+        @*<a asp-action="Edit" asp-route-id="@Model.ihos">Edit</a> |
+            <a asp-action="Index">Back to List</a>*@
+        <a asp-action="IndexClients">Tornar</a>
+    </div>
+}

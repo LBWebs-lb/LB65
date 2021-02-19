@@ -6,25 +6,16 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
 @if (SignInManager.IsSignedIn(User))
 {
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+
     <table class="table">
         <thead>
             <tr>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.Host)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Ftp)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PreDis)
-                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.dnom)
                 </th>
@@ -47,15 +38,6 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.Host.ihos)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ftp.iftp)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PreDis.ipredis)
-                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.dnom)
                     </td>

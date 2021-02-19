@@ -10,6 +10,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using LB.Models.Clients;
+using Microsoft.AspNetCore.Http;
 
 namespace LB.Data
 {
@@ -46,8 +47,8 @@ namespace LB.Data
 
                 AddedEntities.ForEach(E =>
                 {
-                    //E.Property("cusualt").CurrentValue = Common.ExtensionsMethods.getuserid(this.Users);
-                    E.Property("faltrto").CurrentValue = DateTime.Now;
+                    //E.Property("cusualt").CurrentValue = HttpContext.Session.Get
+                E.Property("faltrto").CurrentValue = DateTime.Now;
                     E.Property("hmod").CurrentValue = DateTime.Now.ToString("HH:mm");
                     E.Property("fmod").CurrentValue = DateTime.Now.ToString("dd/M/yyyy");
                 });

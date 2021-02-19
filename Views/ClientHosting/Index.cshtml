@@ -23,22 +23,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.linkwphos)
                 </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.cusualt)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.faltrto)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.cusumod)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.fmod)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.hmod)
-                    </th>*@
-                @*<th></th>*@
             </tr>
         </thead>
         <tbody>
@@ -57,18 +41,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.cusualt)
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.faltrto)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.cusumod)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.fmod)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.hmod)
-                        </td>*@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.ihos">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.ihos">Details</a> |
