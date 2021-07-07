@@ -21,9 +21,16 @@ namespace LB.Controllers
             _context = context;
         }
 
+        private static string search { get; set; } 
+
         // GET: ClientsLBs
-       public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
        {
+            if (!String.IsNullOrEmpty(search))
+            {
+                var appdbcontext = _context.ClientsLB.Where(s => s.dnom.Contains(search));
+                return View(await appdbcontext.ToListAsync());
+            }
            var applicationDbContext = _context.ClientsLB.Include(c => c.Ftp).Include(c => c.Host).Include(c => c.PreDis);
            return View(await applicationDbContext.ToListAsync());
        }
@@ -263,11 +270,17 @@ namespace LB.Controllers
                 return RedirectToAction("Details", new RouteValueDictionary(new { controller = "ClientsPreDissenies", action = "Details", Id = clientsLB.ipredis }));
             }
         }
+
         [HttpPost]
-        public ActionResult Search(IFormCollection fc)
+        public IActionResult Search(IFormCollection fc)
         {
-           
-            return View();
+            var searchString = fc["Buscador"];
+            if (!String.IsNullOrEmpty(searchString)){
+                search = searchString;
+            }else{
+                search = null;
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

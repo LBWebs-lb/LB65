@@ -7,17 +7,15 @@
 <h1>Clients</h1>
 @if (SignInManager.IsSignedIn(User))
 {
-    <form id="myform" method="post" action="ClientsLBs/Search">
-        @*<label for="fname">Buscador:</label>*@
-        <input type="text" id="txtsearch" placeholder="Buscador"/>
-        <input type="submit" id="btn1" value="Enviar" />
-    </form>
-
+    @using (Html.BeginForm("Search", "ClientsLBs", FormMethod.Post))
+    {
+        <input type="text" id="txtsearch" name="buscador" placeholder="Buscador" />
+        <input type="submit" value="Enviar" />
+    }
     <p>
         <a asp-action="Create">Crear nou</a>
     </p>
     <table class="table">
-
         <thead>
             <tr>
                 <th>
@@ -70,20 +68,4 @@
             }
         </tbody>
     </table>
-
-    <script>
-        $(document).ready(function () {
-            $('#btn1').submit(function () {
-                $.ajax({
-                    url: 'ClientsLBs/Search',
-                    type: 'POST',
-                    datatype: 'text',
-                    data: {
-                        search: myform.txtsearch.value
-                    }
-                });
-            });
-        });
-    </script>
-
 }
