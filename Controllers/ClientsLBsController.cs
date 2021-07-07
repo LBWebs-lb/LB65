@@ -22,11 +22,12 @@ namespace LB.Controllers
         }
 
         // GET: ClientsLBs
-        public async Task<IActionResult> Index()
-        {
-            var applicationDbContext = _context.ClientsLB.Include(c => c.Ftp).Include(c => c.Host).Include(c => c.PreDis);
-            return View(await applicationDbContext.ToListAsync());
-        }
+       public async Task<IActionResult> Index()
+       {
+           var applicationDbContext = _context.ClientsLB.Include(c => c.Ftp).Include(c => c.Host).Include(c => c.PreDis);
+           return View(await applicationDbContext.ToListAsync());
+       }
+
 
         // GET: ClientsLBs/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -262,7 +263,11 @@ namespace LB.Controllers
                 return RedirectToAction("Details", new RouteValueDictionary(new { controller = "ClientsPreDissenies", action = "Details", Id = clientsLB.ipredis }));
             }
         }
-
+        [HttpPost]
+        public ActionResult Search(IFormCollection fc)
+        {
+           
+            return View();
+        }
     }
-    
 }

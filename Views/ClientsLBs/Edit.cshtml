@@ -13,21 +13,6 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="icli" />
-            @*<div class="form-group">
-                <label asp-for="ihos" class="control-label"></label>
-                <select asp-for="ihos" class="form-control" asp-items="ViewBag.ihos"></select>
-                <span asp-validation-for="ihos" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="iftp" class="control-label"></label>
-                <select asp-for="iftp" class="form-control" asp-items="ViewBag.iftp"></select>
-                <span asp-validation-for="iftp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ipredis" class="control-label"></label>
-                <select asp-for="ipredis" class="form-control" asp-items="ViewBag.ipredis"></select>
-                <span asp-validation-for="ipredis" class="text-danger"></span>
-            </div>*@
             <div class="form-group">
                 <label asp-for="dnom" class="control-label"></label>
                 <input asp-for="dnom" class="form-control" />
@@ -61,31 +46,6 @@
                 <input asp-for="tcli" class="form-control" />
                 <span asp-validation-for="tcli" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-                <label asp-for="cusualt" class="control-label"></label>
-                <input asp-for="cusualt" class="form-control" />
-                <span asp-validation-for="cusualt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="faltrto" class="control-label"></label>
-                <input asp-for="faltrto" class="form-control" />
-                <span asp-validation-for="faltrto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cusumod" class="control-label"></label>
-                <input asp-for="cusumod" class="form-control" />
-                <span asp-validation-for="cusumod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="fmod" class="control-label"></label>
-                <input asp-for="fmod" class="form-control" />
-                <span asp-validation-for="fmod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="hmod" class="control-label"></label>
-                <input asp-for="hmod" class="form-control" />
-                <span asp-validation-for="hmod" class="text-danger"></span>
-            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
