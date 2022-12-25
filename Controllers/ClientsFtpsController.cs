@@ -133,6 +133,9 @@ namespace LB.Controllers
             }
 
             return View(clientsFtp);
+
+
+
         }
 
         // POST: ClientsFtps/Delete/5
